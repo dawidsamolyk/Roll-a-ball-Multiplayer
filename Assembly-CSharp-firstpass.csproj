@@ -136,6 +136,11 @@
      <Compile Include="Assets\Standard Assets\ParticleSystems\Scripts\ParticleSystemMultiplier.cs" />
      <Compile Include="Assets\Standard Assets\ParticleSystems\Scripts\SmokeParticles.cs" />
      <Compile Include="Assets\Standard Assets\ParticleSystems\Scripts\WaterHoseParticles.cs" />
+     <Compile Include="Assets\Standard Assets\SampleScenes\Scripts\CameraSwitch.cs" />
+     <Compile Include="Assets\Standard Assets\SampleScenes\Scripts\LevelReset.cs" />
+     <Compile Include="Assets\Standard Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
+     <Compile Include="Assets\Standard Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
+     <Compile Include="Assets\Standard Assets\SampleScenes\Scripts\SlowMoButton.cs" />
      <Compile Include="Assets\Standard Assets\Utility\ActivateTrigger.cs" />
      <Compile Include="Assets\Standard Assets\Utility\AutoMobileShaderSwitch.cs" />
      <Compile Include="Assets\Standard Assets\Utility\AutoMoveAndRotate.cs" />
@@ -186,6 +191,7 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\MinMaxReduction.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\SSAA.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\RadialBlur.shader" />
+     <None Include="Assets\Standard Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfFieldDX11.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ContrastComposite.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset3.shader" />
@@ -275,25 +281,25 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Photon3Unity3D">
- <HintPath>D:/Dane/Programowanie/Unity/Roll-a-ball-multiplayer/Assets/DownloadedAssets/Plugins/WP8/Photon3Unity3D.dll</HintPath>
+ <HintPath>C:/Users/Dawid/git/Roll-a-ball-multiplayer/Assets/DownloadedAssets/Plugins/Photon3Unity3D.dll</HintPath>
  </Reference>
  <Reference Include="Photon3Unity3D">
- <HintPath>D:/Dane/Programowanie/Unity/Roll-a-ball-multiplayer/Assets/DownloadedAssets/Plugins/Photon3Unity3D.dll</HintPath>
+ <HintPath>C:/Users/Dawid/git/Roll-a-ball-multiplayer/Assets/DownloadedAssets/Plugins/Metro/Photon3Unity3D.dll</HintPath>
  </Reference>
  <Reference Include="Photon3Unity3D">
- <HintPath>D:/Dane/Programowanie/Unity/Roll-a-ball-multiplayer/Assets/DownloadedAssets/Plugins/Metro/Photon3Unity3D.dll</HintPath>
- </Reference>
- <Reference Include="pb_Profiler">
- <HintPath>D:/Dane/Programowanie/Unity/Roll-a-ball-multiplayer/Assets/DownloadedAssets/ProCore/Shared/pb_Profiler/pb_Profiler.dll</HintPath>
- </Reference>
- <Reference Include="ProBuilderMeshOps-Unity5">
- <HintPath>D:/Dane/Programowanie/Unity/Roll-a-ball-multiplayer/Assets/DownloadedAssets/ProCore/Prototype/Classes/ProBuilderMeshOps-Unity5.dll</HintPath>
- </Reference>
- <Reference Include="ProCore">
- <HintPath>D:/Dane/Programowanie/Unity/Roll-a-ball-multiplayer/Assets/DownloadedAssets/ProCore/Shared/Code/ProCore.dll</HintPath>
+ <HintPath>C:/Users/Dawid/git/Roll-a-ball-multiplayer/Assets/DownloadedAssets/Plugins/WP8/Photon3Unity3D.dll</HintPath>
  </Reference>
  <Reference Include="ProBuilderCore-Unity5">
- <HintPath>D:/Dane/Programowanie/Unity/Roll-a-ball-multiplayer/Assets/DownloadedAssets/ProCore/Prototype/Classes/ProBuilderCore-Unity5.dll</HintPath>
+ <HintPath>C:/Users/Dawid/git/Roll-a-ball-multiplayer/Assets/DownloadedAssets/ProCore/Prototype/Classes/ProBuilderCore-Unity5.dll</HintPath>
+ </Reference>
+ <Reference Include="ProBuilderMeshOps-Unity5">
+ <HintPath>C:/Users/Dawid/git/Roll-a-ball-multiplayer/Assets/DownloadedAssets/ProCore/Prototype/Classes/ProBuilderMeshOps-Unity5.dll</HintPath>
+ </Reference>
+ <Reference Include="ProCore">
+ <HintPath>C:/Users/Dawid/git/Roll-a-ball-multiplayer/Assets/DownloadedAssets/ProCore/Shared/Code/ProCore.dll</HintPath>
+ </Reference>
+ <Reference Include="pb_Profiler">
+ <HintPath>C:/Users/Dawid/git/Roll-a-ball-multiplayer/Assets/DownloadedAssets/ProCore/Shared/pb_Profiler/pb_Profiler.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
