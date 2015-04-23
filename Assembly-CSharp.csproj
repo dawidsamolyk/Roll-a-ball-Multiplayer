@@ -164,8 +164,12 @@
      <Compile Include="Assets\DownloadedAssets\Plugins\ChatApi\ChatState.cs" />
      <Compile Include="Assets\DownloadedAssets\Plugins\ChatApi\ChatUserStatus.cs" />
      <Compile Include="Assets\DownloadedAssets\Plugins\ChatApi\IChatClientListener.cs" />
+     <Compile Include="Assets\MyScenes\Lobby\Scripts\ClickDetector.cs" />
      <Compile Include="Assets\MyScenes\Lobby\Scripts\Matchmaker.cs" />
+     <Compile Include="Assets\MyScenes\Lobby\Scripts\NetworkCharacter.cs" />
      <Compile Include="Assets\MyScenes\Lobby\Scripts\RollerBallLogic.cs" />
+     <Compile Include="Assets\MyScenes\RollerBall\Scripts\Ball.cs" />
+     <Compile Include="Assets\MyScenes\RollerBall\Scripts\BallUserControl.cs" />
      <Compile Include="Assets\MyScenes\testScene\Scripts\RingRotator.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\EventSystemChecker.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
@@ -280,7 +284,7 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
-     <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
+     <None Include="Assets\MyScenes\RollerBall\RollerBallGuidelines.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\SimpleClear.shader" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
      <None Include="Assets\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
@@ -296,12 +300,6 @@
  </Reference>
  <Reference Include="Photon3Unity3D">
  <HintPath>C:/Users/Dawid/git/Roll-a-ball-multiplayer/Assets/DownloadedAssets/Plugins/Photon3Unity3D.dll</HintPath>
- </Reference>
- <Reference Include="Photon3Unity3D">
- <HintPath>C:/Users/Dawid/git/Roll-a-ball-multiplayer/Assets/DownloadedAssets/Plugins/Metro/Photon3Unity3D.dll</HintPath>
- </Reference>
- <Reference Include="Photon3Unity3D">
- <HintPath>C:/Users/Dawid/git/Roll-a-ball-multiplayer/Assets/DownloadedAssets/Plugins/WP8/Photon3Unity3D.dll</HintPath>
  </Reference>
  <Reference Include="ProBuilderCore-Unity5">
  <HintPath>C:/Users/Dawid/git/Roll-a-ball-multiplayer/Assets/DownloadedAssets/ProCore/Prototype/Classes/ProBuilderCore-Unity5.dll</HintPath>

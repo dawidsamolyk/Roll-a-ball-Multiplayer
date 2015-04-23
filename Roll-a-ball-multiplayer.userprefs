@@ -1,9 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MyScenes\Lobby\Scripts\RollerBallLogic.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\DownloadedAssets\Photon Unity Networking\Demos\DemoRPGMovement\Scripts\RPGMovement.cs">
     <Files>
-      <File FileName="Assets\MyScenes\Lobby\Scripts\RollerBallLogic.cs" Line="6" Column="2" />
-      <File FileName="Assets\MyScenes\Lobby\Scripts\Matchmaker.cs" Line="4" Column="2" />
+      <File FileName="Assets\DownloadedAssets\Photon Unity Networking\Demos\DemoRPGMovement\Scripts\RPGMovement.cs" Line="11" Column="2" />
+      <File FileName="Assets\DownloadedAssets\Photon Unity Networking\Plugins\PhotonNetwork\PhotonView.cs" Line="55" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

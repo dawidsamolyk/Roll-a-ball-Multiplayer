@@ -22,7 +22,7 @@ public class RPGMovement : MonoBehaviour
     void Start() 
     {
         m_CharacterController = GetComponent<CharacterController>();
-        m_Animator = GetComponent<Animator>();
+        //m_Animator = GetComponent<Animator>();
         m_PhotonView = GetComponent<PhotonView>();
         m_TransformView = GetComponent<PhotonTransformView>();
     }
@@ -74,10 +74,10 @@ public class RPGMovement : MonoBehaviour
             }
         }
 
-        m_AnimatorSpeed = Mathf.MoveTowards( m_AnimatorSpeed, speed, Time.deltaTime * 5f );
+        //m_AnimatorSpeed = Mathf.MoveTowards( m_AnimatorSpeed, speed, Time.deltaTime * 5f );
 
-        m_Animator.SetFloat( "Speed", m_AnimatorSpeed );
-        m_Animator.SetFloat( "Direction", direction );
+        //m_Animator.SetFloat( "Speed", m_AnimatorSpeed );
+       // m_Animator.SetFloat( "Direction", direction );
 
         m_LastPosition = transform.position;
     }
