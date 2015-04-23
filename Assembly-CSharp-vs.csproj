@@ -164,6 +164,8 @@
      <Compile Include="Assets\DownloadedAssets\Plugins\ChatApi\ChatState.cs" />
      <Compile Include="Assets\DownloadedAssets\Plugins\ChatApi\ChatUserStatus.cs" />
      <Compile Include="Assets\DownloadedAssets\Plugins\ChatApi\IChatClientListener.cs" />
+     <Compile Include="Assets\MyScenes\Lobby\Scripts\Matchmaker.cs" />
+     <Compile Include="Assets\MyScenes\Lobby\Scripts\RollerBallLogic.cs" />
      <Compile Include="Assets\MyScenes\testScene\Scripts\RingRotator.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\EventSystemChecker.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />

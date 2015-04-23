@@ -5,6 +5,8 @@ Project("{6DA7DF27-9223-E46E-56A4-4C23085B5CAB}") = "Roll-a-ball-multiplayer", "
 EndProject
 Project("{6DA7DF27-9223-E46E-56A4-4C23085B5CAB}") = "Roll-a-ball-multiplayer", "Assembly-CSharp.csproj", "{0F925B5A-9C2F-9A67-3C9B-A91AB1DF654D}"
 EndProject
+Project("{6DA7DF27-9223-E46E-56A4-4C23085B5CAB}") = "Roll-a-ball-multiplayer", "Assembly-CSharp-Editor-firstpass.csproj", "{111D8293-3F99-2BE4-84AB-2DAD64F40996}"
+EndProject
 Project("{6DA7DF27-9223-E46E-56A4-4C23085B5CAB}") = "Roll-a-ball-multiplayer", "Assembly-CSharp-Editor.csproj", "{5A997A63-98B0-3F5F-0EF7-9B9252D7FB30}"
 EndProject
 Global
@@ -21,6 +23,10 @@ Global
 		{0F925B5A-9C2F-9A67-3C9B-A91AB1DF654D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F925B5A-9C2F-9A67-3C9B-A91AB1DF654D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F925B5A-9C2F-9A67-3C9B-A91AB1DF654D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{111D8293-3F99-2BE4-84AB-2DAD64F40996}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{111D8293-3F99-2BE4-84AB-2DAD64F40996}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{111D8293-3F99-2BE4-84AB-2DAD64F40996}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{111D8293-3F99-2BE4-84AB-2DAD64F40996}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5A997A63-98B0-3F5F-0EF7-9B9252D7FB30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5A997A63-98B0-3F5F-0EF7-9B9252D7FB30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A997A63-98B0-3F5F-0EF7-9B9252D7FB30}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -29,7 +35,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-											GlobalSection(MonoDevelopProperties) = preSolution
+																GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
