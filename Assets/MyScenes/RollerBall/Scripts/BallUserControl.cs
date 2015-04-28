@@ -8,7 +8,7 @@ namespace UnityStandardAssets.Vehicles.Ball
 	{
 		private Ball ball; // Reference to the ball controller.
 		private PhotonView m_PhotonView;
-		
+
 		private Vector3 move;
 		// the world-relative desired move direction, calculated from the camForward and user input.
 		
@@ -44,9 +44,9 @@ namespace UnityStandardAssets.Vehicles.Ball
 		
 		private void Update()
 		{
-			if (m_PhotonView.isMine == true) {
+			if (m_PhotonView.isMine)
+			{
 				// Get the axis and jump input.
-				
 				float h = CrossPlatformInputManager.GetAxis ("Horizontal");
 				float v = CrossPlatformInputManager.GetAxis ("Vertical");
 				jump = CrossPlatformInputManager.GetButton ("Jump");
@@ -62,15 +62,14 @@ namespace UnityStandardAssets.Vehicles.Ball
 				}
 			}
 		}
-		
-		
+
 		private void FixedUpdate()
 		{
-			if (m_PhotonView.isMine == true) {
+			if (m_PhotonView.isMine) {
 				// Call the Move function of the ball controller
 				ball.Move (move, jump);
 				jump = false;
 			}
 		}
-	}
+}
 }

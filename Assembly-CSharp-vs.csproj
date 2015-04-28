@@ -132,7 +132,6 @@
      <Compile Include="Assets\DownloadedAssets\Photon Unity Networking\UtilityScripts\HighlightOwnedGameObj.cs" />
      <Compile Include="Assets\DownloadedAssets\Photon Unity Networking\UtilityScripts\InRoomChat.cs" />
      <Compile Include="Assets\DownloadedAssets\Photon Unity Networking\UtilityScripts\InRoomRoundTimer.cs" />
-     <Compile Include="Assets\DownloadedAssets\Photon Unity Networking\UtilityScripts\InputToEvent.cs" />
      <Compile Include="Assets\DownloadedAssets\Photon Unity Networking\UtilityScripts\ManualPhotonViewAllocator.cs" />
      <Compile Include="Assets\DownloadedAssets\Photon Unity Networking\UtilityScripts\MoveByKeys.cs" />
      <Compile Include="Assets\DownloadedAssets\Photon Unity Networking\UtilityScripts\OnAwakeUsePhotonView.cs" />
@@ -165,12 +164,16 @@
      <Compile Include="Assets\DownloadedAssets\Plugins\ChatApi\ChatUserStatus.cs" />
      <Compile Include="Assets\DownloadedAssets\Plugins\ChatApi\IChatClientListener.cs" />
      <Compile Include="Assets\MyScenes\Lobby\Scripts\ClickDetector.cs" />
+     <Compile Include="Assets\MyScenes\Lobby\Scripts\FreeLookCam.cs" />
+     <Compile Include="Assets\MyScenes\Lobby\Scripts\InputToEvent.cs" />
      <Compile Include="Assets\MyScenes\Lobby\Scripts\Matchmaker.cs" />
      <Compile Include="Assets\MyScenes\Lobby\Scripts\NetworkCharacter.cs" />
+     <Compile Include="Assets\MyScenes\Lobby\Scripts\ProtectCameraFromWallClip.cs" />
      <Compile Include="Assets\MyScenes\Lobby\Scripts\RollerBallLogic.cs" />
      <Compile Include="Assets\MyScenes\RollerBall\Scripts\Ball.cs" />
      <Compile Include="Assets\MyScenes\RollerBall\Scripts\BallUserControl.cs" />
      <Compile Include="Assets\MyScenes\testScene\Scripts\RingRotator.cs" />
+     <Compile Include="Assets\NetworkingGUI.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\EventSystemChecker.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
