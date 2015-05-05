@@ -17,7 +17,7 @@ GameObject:
   - 114: {fileID: 11477968}
   - 114: {fileID: 11416364}
   - 114: {fileID: 11440464}
-  - 114: {fileID: 11455256}
+  - 114: {fileID: 11420268}
   m_Layer: 9
   m_Name: RollerBall
   m_TagString: Player
@@ -115,23 +115,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b45ffeefb02adaa49bb772c2916aed2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11440464
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 183ce9c209d2360468a03c2a90b66528, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11455256
+--- !u!114 &11420268
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -143,10 +132,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PositionModel:
-    SynchronizeEnabled: 0
+    SynchronizeEnabled: 1
     TeleportEnabled: 1
     TeleportIfDistanceGreaterThan: 3
-    InterpolateOption: 3
+    InterpolateOption: 2
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 1
     InterpolateMoveTowardsAcceleration: 2
@@ -183,7 +172,7 @@ MonoBehaviour:
     DrawErrorGizmo: 1
   m_RotationModel:
     SynchronizeEnabled: 0
-    InterpolateOption: 0
+    InterpolateOption: 1
     InterpolateRotateTowardsSpeed: 180
     InterpolateLerpSpeed: 5
   m_ScaleModel:
@@ -191,6 +180,17 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!114 &11440464
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 183ce9c209d2360468a03c2a90b66528, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11477968
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -16,7 +16,7 @@ public class ColllisionDetector : MonoBehaviour
         {
             GameObject goPointedAt = RaycastObject(Input.mousePosition);
 
-            if (goPointedAt != null && goPointedAt != this.gameObject && goPointedAt.name.Equals("monsterprefab(Clone)", StringComparison.OrdinalIgnoreCase))
+			if (goPointedAt != null && goPointedAt != this.gameObject && goPointedAt.name.Equals("RollerBall(Clone)", StringComparison.OrdinalIgnoreCase))
             {
                 PhotonView rootView = goPointedAt.transform.root.GetComponent<PhotonView>();
                 GameLogic.TagPlayer(rootView.owner.ID);

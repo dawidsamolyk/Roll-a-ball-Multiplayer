@@ -13,7 +13,6 @@ QualitySettings:
     shadowResolution: 0
     shadowProjection: 1
     shadowCascades: 1
-    shadowmapFiltering: 1
     shadowDistance: 20
     shadowCascade2Split: .333333343
     shadowCascade4Split: {x: .0666666701, y: .200000003, z: .466666669}
@@ -37,7 +36,6 @@ QualitySettings:
     shadowResolution: 0
     shadowProjection: 1
     shadowCascades: 1
-    shadowmapFiltering: 1
     shadowDistance: 20
     shadowCascade2Split: .333333343
     shadowCascade4Split: {x: .0666666701, y: .200000003, z: .466666669}
@@ -61,7 +59,6 @@ QualitySettings:
     shadowResolution: 1
     shadowProjection: 1
     shadowCascades: 1
-    shadowmapFiltering: 1
     shadowDistance: 80
     shadowCascade2Split: .333333343
     shadowCascade4Split: {x: .0666666701, y: .200000003, z: .466666669}
@@ -85,7 +82,6 @@ QualitySettings:
     shadowResolution: 2
     shadowProjection: 1
     shadowCascades: 2
-    shadowmapFiltering: 1
     shadowDistance: 100
     shadowCascade2Split: .333333343
     shadowCascade4Split: {x: .0666666701, y: .200000003, z: .466666669}
@@ -109,7 +105,6 @@ QualitySettings:
     shadowResolution: 3
     shadowProjection: 1
     shadowCascades: 2
-    shadowmapFiltering: 1
     shadowDistance: 120
     shadowCascade2Split: .333333343
     shadowCascade4Split: {x: .0666666701, y: .200000003, z: .466666669}
@@ -133,7 +128,6 @@ QualitySettings:
     shadowResolution: 3
     shadowProjection: 1
     shadowCascades: 4
-    shadowmapFiltering: 1
     shadowDistance: 150
     shadowCascade2Split: .333333343
     shadowCascade4Split: {x: .0666666701, y: .199999988, z: .466666639}
