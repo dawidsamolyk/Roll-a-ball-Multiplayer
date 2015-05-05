@@ -1,8 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MyScenes\Lobby\Scripts\Matchmaker.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MyScenes\Lobby\Scripts\NetworkCharacter.cs">
     <Files>
-      <File FileName="Assets\MyScenes\Lobby\Scripts\Matchmaker.cs" Line="58" Column="3" />
+      <File FileName="Assets\MyScenes\RollerBall\Scripts\Ball.cs" Line="24" Column="3" />
+      <File FileName="Assets\MyScenes\RollerBall\Scripts\BallUserControl.cs" Line="65" Column="3" />
+      <File FileName="Assets\MyScenes\Lobby\Scripts\NetworkCharacter.cs" Line="18" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
