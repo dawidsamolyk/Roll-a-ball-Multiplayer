@@ -17,6 +17,7 @@ public class NetworkingGUI : MonoBehaviour {
 
 	private void DrawMainArea()
 	{
+
 		if (PhotonNetwork.connectedAndReady && !PhotonNetwork.inRoom) {
 			if (GUILayout.Button ("Join/create random room")) {
 				PhotonNetwork.JoinRandomRoom ();
@@ -47,7 +48,7 @@ public class NetworkingGUI : MonoBehaviour {
 	
 		if (!PhotonNetwork.connected) {
 			if (GUILayout.Button ("Connect!")) {
-				PhotonNetwork.ConnectUsingSettings ("0.1");
+				PhotonNetwork.ConnectUsingSettings ("0.1");				
 			}
 		}
 		
@@ -60,4 +61,5 @@ public class NetworkingGUI : MonoBehaviour {
 		
 		GUILayout.EndArea();
 	}
+
 }
