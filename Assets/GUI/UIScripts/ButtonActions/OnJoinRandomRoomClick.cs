@@ -1,11 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class OnJoinRandomRoom : MonoBehaviour {
+public class OnJoinRandomRoomClick : MonoBehaviour {
 
 	void OnClick () {
-		if (PhotonNetwork.connected && !PhotonNetwork.inRoom) {
 			PhotonNetwork.JoinRandomRoom ();
-		}
 	}
 }
