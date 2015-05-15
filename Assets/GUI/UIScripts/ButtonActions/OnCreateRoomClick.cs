@@ -3,6 +3,8 @@ using System.Collections;
 
 public class OnCreateRoomClick : MonoBehaviour {
 
+	public GameObject createRoomPanel;
+	public GameObject creatingRoomInfoPanel;
 	public GameObject privateRoomToggle;
 	public GameObject roomNameField;
 
@@ -22,8 +24,12 @@ public class OnCreateRoomClick : MonoBehaviour {
 		options.isVisible = roomNameField.GetActive ();
 		roomName = roomNameField.GetComponent<UILabel> ().text;
 
-		if (PhotonNetwork.connectedAndReady && !PhotonNetwork.inRoom) {
-			PhotonNetwork.JoinOrCreateRoom(roomName,options,TypedLobby.Default);
+		if (!roomName.Equals ("")) {
+			if (PhotonNetwork.connectedAndReady && !PhotonNetwork.inRoom) {
+				PhotonNetwork.JoinOrCreateRoom (roomName, options, TypedLobby.Default);
+				NGUITools.SetActive (createRoomPanel, false);
+				NGUITools.SetActive (creatingRoomInfoPanel, true);
+			}
 		}
 	}
 
