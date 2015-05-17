@@ -12,8 +12,7 @@ public class OnConnectingFailed : MonoBehaviour {
 	 */
 
 	void Update () {
-		if (!PhotonNetwork.connecting && 
-		    !(PhotonNetwork.connected || PhotonNetwork.connectedAndReady)) {
+		if (!PhotonNetwork.connecting && !PhotonNetwork.connected) {
 			NGUITools.SetActive(connectingPanel, false);
 			NGUITools.SetActive(connectingFailedInfoPanel, true);
 		}	
