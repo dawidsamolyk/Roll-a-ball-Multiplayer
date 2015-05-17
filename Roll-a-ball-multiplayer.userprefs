@@ -1,10 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\GUI\UIScripts\ConnectionStates\OnConnectingFailed.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\GUI\UIScripts\SetRoomList.cs">
     <Files>
-      <File FileName="Assets\GUI\UIScripts\ButtonActions\OnCreateRoomClick.cs" Line="79" Column="56" />
-      <File FileName="Assets\GUI\UIScripts\ConnectionStates\OnConnectingFailed.cs" Line="14" Column="18" />
-      <File FileName="Assets\GUI\UIScripts\ButtonActions\OnConnectClicked.cs" Line="1" Column="1" />
+      <File FileName="Assets\NetworkingGUI.cs" Line="12" Column="8" />
+      <File FileName="Assets\DownloadedAssets\NGUI\Scripts\UI\UIAnchor.cs" Line="1" Column="1" />
+      <File FileName="Assets\GUI\UIScripts\SetRoomList.cs" Line="127" Column="73" />
+      <File FileName="Assets\GUI\UIScripts\ButtonActions\OnJoinRoomClick.cs" Line="11" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
