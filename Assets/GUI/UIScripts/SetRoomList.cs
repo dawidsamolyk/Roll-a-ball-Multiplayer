@@ -9,14 +9,16 @@ public class SetRoomList : MonoBehaviour
 	public GameObject parent;
 	public GameObject roomItem;
 
+	/**
+	 * Distance in pixels from left borders of room items on list. 
+	 */
+	private const int ITEM_DISTANCE = 150;
+
 	void Start ()
 	{
 		NGUITools.SetActive (roomItem, false);
 	}
-
 	
-
-	//Update room list on every frame
 	void Update ()
 	{
 		if (!PhotonNetwork.inRoom && matchmaker.roomsList != null) {
@@ -32,11 +34,12 @@ public class SetRoomList : MonoBehaviour
 				 * uaktywnij
 				 */ 
 
-			destroyChildren (parent);
-			setAllRoomItems (roomItems, roomsNumber);
-			setParent (parent, roomItems);
-			setItemsPosition(roomItems);
-			setActiveItems (roomItems);
+			DestroyChildren (parent);
+			ClearItemsList(roomItems);
+			InstantiateRoomItems (roomItems, roomsNumber);
+			SetParent (parent, roomItems);
+			SetItemsPosition (roomItems);
+			//setActiveItems (roomItems);
 		}
 	
 	}
@@ -47,15 +50,29 @@ public class SetRoomList : MonoBehaviour
 	 * of items in grid.
 	 * 
 	 */
-	private void destroyChildren (GameObject parent)
+	private void DestroyChildren (GameObject parent)
 	{
-		int childrenAmount = parent.transform.childCount;
+		int childCount = parent.transform.childCount;
 
-		if (childrenAmount > 0) {
-			for (int i = childrenAmount - 1; i >= 0; i--) {
-				Destroy (parent.transform.GetChild (i).gameObject);
+		if (childCount > 0) {
+			for (int i = childCount - 1; i >= 0; i--) {
+				GameObject child = parent.transform.GetChild(i).gameObject;
+				DestroyChild(child);
 			}
 		}
+	}
+
+	private void DestroyChild(GameObject child)
+	{
+		//Unactive object means is model to instantiate it.  
+		if (child.GetActive ()) {
+			Destroy (child);
+		}
+	}
+
+	private void ClearItemsList(List<GameObject> itemList)
+	{
+		itemList.Clear();
 	}
 
 	/**
@@ -63,7 +80,7 @@ public class SetRoomList : MonoBehaviour
 	 * Method may be naive and silly because check if
 	 * field contains given string. 
 	 */
-	private void setRoomItem (GameObject roomItem, RoomInfo roomInfo)
+	private void SetRoomItem (GameObject roomItem, RoomInfo roomInfo)
 	{
 		List<UILabel> labels = new List<UILabel> ();
 		roomItem.GetComponentsInChildren<UILabel> (true, labels);
@@ -89,19 +106,20 @@ public class SetRoomList : MonoBehaviour
 	 * Each item is a copy of original item roomItem.
 	 * Put all copies to list for later processing. 
 	 */
-	private void setAllRoomItems (List <GameObject> roomItems, int roomsNumber)
+	private void InstantiateRoomItems (List <GameObject> roomItems, int roomsCount)
 	{
-		for (int i = 0; i < roomsNumber; i++) {
+		for (int i = 0; i < roomsCount; i++) {
 			GameObject roomItemCopy = Instantiate (this.roomItem); 
 			roomItems.Add (roomItemCopy);
-			setRoomItem (roomItemCopy, matchmaker.roomsList [i]);
+			SetRoomItem (roomItemCopy, matchmaker.roomsList [i]);
+			SetActiveItem (roomItemCopy);
 		}
 	}
 
 	/**
 	 * Set parent for kids. Don't let them go orphanage.
 	 */
-	private void setParent (GameObject parent, List<GameObject> children)
+	private void SetParent (GameObject parent, List<GameObject> children)
 	{
 		foreach (GameObject child in children) {
 			child.transform.parent = parent.transform;		
@@ -111,22 +129,49 @@ public class SetRoomList : MonoBehaviour
 	/**
 	 *	Set active all NGUI room items. 
 	 */
-	private void setActiveItems (List<GameObject> items)
+	private void SetActiveItems (List<GameObject> items)
 	{
 		foreach (GameObject item in items) {
-			NGUITools.SetActive (item, true);		
+			SetActiveItem (item);
 		}
 	}
 
-	private void setItemsPosition(List<GameObject> roomItems)
+	private void SetActiveItem (GameObject item)
 	{
-		int itemShift = 150; //how much pixels to right put next item
-		int size = roomItems.Count;
+		NGUITools.SetActive (item, true);
+	}
 
-		for (int i=0; i < size; i++) {
-			roomItems[i].transform.position = new Vector3(i * itemShift, 0f, 0f);
+	//
+	private void SetItemsPosition (List<GameObject> roomItems)
+	{
+		int itemsCount = roomItems.Count;
+
+		for (int i = 0; i < itemsCount; i++) {
+			GameObject item = roomItems[i];
+			GameObject parent = item.transform.parent.gameObject;
+			setItemPosition(item, parent, i);
 		}
 	}
 
+	private void setItemPosition(GameObject item, GameObject parent, int itemIndex)
+	{
+		Vector3 translationVector = new Vector3(itemIndex * ITEM_DISTANCE, 0f, 0f);
+		item.transform.position = GetParentPosition(item);		
+		item.transform.Translate(translationVector);	
+		InvalidateItemTransform (item);
+	}
+
+	private void InvalidateItemTransform(GameObject item)
+	{	
+		Vector3 rotation = new Vector3 (0f, 0f, 0f);
+		item.transform.localScale = new Vector3(1f,1f,1f);
+		item.transform.rotation = new Quaternion (0f, 0f, 0f, 0f);
+	}
+
+
+	private Vector3 GetParentPosition(GameObject child)
+	{
+		return child.transform.parent.position;
+	}
 
 }
