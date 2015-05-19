@@ -1,12 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MyScenes\RollerBall\Scripts\Ball.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MyScenes\Lobby\Scripts\ClickDetector.cs">
     <Files>
       <File FileName="Assets\MyScenes\Lobby\Scripts\ClickDetector.cs" Line="1" Column="1" />
       <File FileName="Assets\MyScenes\Lobby\Scripts\Matchmaker.cs" Line="1" Column="1" />
       <File FileName="Assets\MyScenes\Lobby\Scripts\RollerBallLogic.cs" Line="1" Column="1" />
-      <File FileName="Assets\MyScenes\RollerBall\Scripts\BallUserControl.cs" Line="1" Column="1" />
-      <File FileName="Assets\MyScenes\RollerBall\Scripts\Ball.cs" Line="33" Column="17" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

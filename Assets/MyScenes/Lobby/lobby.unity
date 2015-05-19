@@ -3013,6 +3013,7 @@ GameObject:
   - 33: {fileID: 1613521079}
   - 64: {fileID: 1613521078}
   - 23: {fileID: 1613521077}
+  - 114: {fileID: 1613521081}
   m_Layer: 0
   m_Name: CobbleFloor
   m_TagString: Untagged
@@ -3075,6 +3076,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 305242784}
   m_RootOrder: 0
+--- !u!114 &1613521081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1613521076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23d4b7fb891cd044b9a59a6261c587ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinPrefab: {fileID: 100000, guid: c02747e7134ef1948a039c94a8f33c5b, type: 2}
 --- !u!1 &1627308678 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: cf4d4eb2581871a4baf7ef3d8fb4f3eb, type: 3}
