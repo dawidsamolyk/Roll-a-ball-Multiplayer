@@ -8,31 +8,29 @@ public class RoomList : MonoBehaviour
 	public Matchmaker matchmaker;
 	public GameObject parent;
 	public GameObject roomItemModel;
+	private List<GameObject> roomItems;
+	public UIGrid roomListUIGrid;
 
 	/**
 	 * Distance in pixels from left borders of room items on list. 
 	 */
-	private const int ITEM_DISTANCE = 150;
+	private const float ITEM_DISTANCE = 0.5f;
 
-	private const string ROOM_NAME_LABEL_NAME = "RoomNameLabel";
-	private const string PLAYER_NUMBER_LABEL_NAME = "PlayersNumberLabel";
-	private const string PING_LABEL_NAME = "PingLabel";
+	//indicator that grid should refresh position of item on it
+	private bool repositionGrid;
 
-	private const string ROOM_NAME_LABEL_CONTAINS = "Room Name";
-	private const string PLAYER_NUMBER_LABEL_CONTAINS = "Players";
-	private const string PING_LABEL_CONTAINS = "Ping";
 
 	void Start ()
 	{
 		NGUITools.SetActive (roomItemModel, false);
+		roomItems = new List<GameObject> ();
+		repositionGrid = false;
 	}
 	
 	void Update ()
 	{
 		if (!PhotonNetwork.inRoom && matchmaker.roomsList != null) {
 			int roomsNumber = matchmaker.roomsList.Length;
-
-			List<GameObject> roomItems = new List<GameObject> ();
 
 		//TODO poprawa usuwania pokojów
 		//ustawianie pozycji elementów
@@ -41,7 +39,8 @@ public class RoomList : MonoBehaviour
 			DestroyOutdatedRoomItemsFromList(roomItems);
 			AddExistsRoomItemsToList(roomItems);
 			RefreshPlayersCount(roomItems);
-			SetValidItemsPosition(roomItems);
+			ValidItemsPosition(roomItems);
+			repositionItems();
 		}
 	
 	}
@@ -60,6 +59,8 @@ public class RoomList : MonoBehaviour
 			{
 				roomItems.Remove(roomItem);
 				DestroyItem(roomItem);
+
+				repositionGrid = true;
 			}
 		}
 	}
@@ -84,6 +85,8 @@ public class RoomList : MonoBehaviour
 		SetRoomItemLabels (roomItemInstantion, info);
 		SetParent (this.parent, roomItemInstantion);
 		SetActiveItem (roomItemInstantion);
+
+		repositionGrid = true;
 
 		return roomItemInstantion;
 	}
@@ -123,7 +126,7 @@ public class RoomList : MonoBehaviour
 	//Get name of room from roomItem
 	private string GetRoomName(GameObject roomItem)
 	{
-		GameObject roomNameLabel = roomItem.transform.Find (ROOM_NAME_LABEL_NAME).gameObject;
+		GameObject roomNameLabel = roomItem.transform.Find (RoomListStrings.ROOM_NAME_LABEL_NAME).gameObject;
 		UILabel roomNameLabelComponent = roomNameLabel.GetComponent<UILabel> ();
 
 		return roomNameLabelComponent.text;
@@ -175,13 +178,13 @@ public class RoomList : MonoBehaviour
 
 	private void SetRoomName(string roomName, GameObject roomItem)
 	{
-		GameObject roomNameLabel = roomItem.transform.Find (ROOM_NAME_LABEL_NAME).gameObject;
+		GameObject roomNameLabel = roomItem.transform.Find (RoomListStrings.ROOM_NAME_LABEL_NAME).gameObject;
 		roomNameLabel.GetComponent<UILabel> ().text = roomName;
 	}
 
 	private void SetPlayersCount(int currentPlayersCount, int maxPlayersCount, GameObject roomItem)
 	{
-		GameObject playersCountLabel = roomItem.transform.Find (PLAYER_NUMBER_LABEL_NAME).gameObject;
+		GameObject playersCountLabel = roomItem.transform.Find (RoomListStrings.PLAYER_NUMBER_LABEL_NAME).gameObject;
 		playersCountLabel.GetComponent<UILabel> ().text = string.Format("Players {0}/{1}", currentPlayersCount, maxPlayersCount);
 	}
 
@@ -209,30 +212,39 @@ public class RoomList : MonoBehaviour
 	}
 
 	//
-	private void SetValidItemsPosition (List<GameObject> roomItems)
+	private void ValidItemsPosition (List<GameObject> roomItems)
 	{
-		int itemsCount = roomItems.Count;
+		int iterationCount = 0;
 
-		for (int i = 0; i < itemsCount; i++) {
-			GameObject item = roomItems[i];
-			GameObject parent = item.transform.parent.gameObject;
-			setItemPosition(item, parent, i);
+		foreach(GameObject item in roomItems) {
+			SetItemPosition(item, iterationCount);
+			iterationCount++;
 		}
 	}
 
-	private void setItemPosition(GameObject item, GameObject parent, int itemIndex)
+	private void SetItemPosition(GameObject item, int itemIndex)
 	{
 		Vector3 translationVector = new Vector3(itemIndex * ITEM_DISTANCE, 0f, 0f);
-		item.transform.position = GetParentPosition(item);		
-		item.transform.Translate(translationVector);	
 		InvalidateItemTransform (item);
+		InvalidateItemPosition (item, itemIndex);
 	}
 
 	private void InvalidateItemTransform(GameObject item)
 	{	
-		Vector3 rotation = new Vector3 (0f, 0f, 0f);
 		item.transform.localScale = new Vector3(1f,1f,1f);
 		item.transform.rotation = new Quaternion (0f, 0f, 0f, 0f);
+		item.transform.position = new Vector3 (0f, 0f, 0f);
+	}
+
+	private void InvalidateItemPosition(GameObject item, int itemIndex)
+	{
+		Vector3 itemPosition = new Vector3 (0f, 0f, 0f);
+		Vector3 parentPosition = GetParentPosition (item);
+		itemPosition.x = parentPosition.x;
+		itemPosition.y = parentPosition.y;
+		itemPosition.z = parentPosition.z;
+
+		item.transform.position = itemPosition;
 	}
 
 
@@ -241,4 +253,22 @@ public class RoomList : MonoBehaviour
 		return child.transform.parent.position;
 	}
 
+	private void repositionItems()
+	{
+		if (repositionGrid) {
+			roomListUIGrid.repositionNow = true;
+		}
+	}
+
+}
+
+class RoomListStrings
+{
+	public const string ROOM_NAME_LABEL_NAME = "RoomNameLabel";
+	public const string PLAYER_NUMBER_LABEL_NAME = "PlayersNumberLabel";
+	public const string PING_LABEL_NAME = "PingLabel";
+	
+	public const string ROOM_NAME_LABEL_CONTAINS = "Room Name";
+	public const string PLAYER_NUMBER_LABEL_CONTAINS = "Players";
+	public const string PING_LABEL_CONTAINS = "Ping";
 }

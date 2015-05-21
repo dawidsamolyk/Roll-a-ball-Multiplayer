@@ -1,8 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\GUI\UIScripts\RoomList.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\FPSLimiter.cs">
     <Files>
-      <File FileName="Assets\GUI\UIScripts\RoomList.cs" Line="47" Column="3" />
+      <File FileName="Assets\DebugMenuController.cs" Line="14" Column="36" />
+      <File FileName="Assets\FPSLimiter.cs" Line="26" Column="35" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
