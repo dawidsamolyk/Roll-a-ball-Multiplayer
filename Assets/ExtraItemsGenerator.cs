@@ -3,6 +3,11 @@ using System.Collections;
 
 public class ExtraItemsGenerator : MonoBehaviour {
 	private PrefabsGenerator[] prefabsGenerators;
+	
+	public const int SPEED_UP_QUANTITY = 1;
+	public const int SLOW_DOWN_QUANTITY = 2;
+	public const int JUMP_HIGHER_QUANTITY = 1;
+	public const int JUMP_LOWER_QUANTITY = 2;
 
 	void Start () {
 		Bounds[] surfacesBounds = GetAllSurfacesBounds ();
@@ -35,10 +40,10 @@ public class ExtraItemsGenerator : MonoBehaviour {
 
 	public void generateBoosts() {
 		foreach (PrefabsGenerator eachPrefabsGenerator in prefabsGenerators) {
-			eachPrefabsGenerator.generate("SpeedUp", 1);
-			eachPrefabsGenerator.generate("SpeedDown", 2);
-			eachPrefabsGenerator.generate("JumpHigher", 1);
-			eachPrefabsGenerator.generate("JumpLower", 2);
+			eachPrefabsGenerator.generate("SpeedUp", SPEED_UP_QUANTITY);
+			eachPrefabsGenerator.generate("SpeedDown", SLOW_DOWN_QUANTITY);
+			eachPrefabsGenerator.generate("JumpHigher", JUMP_HIGHER_QUANTITY);
+			eachPrefabsGenerator.generate("JumpLower", JUMP_LOWER_QUANTITY);
 		}
 	}
 
@@ -49,12 +54,12 @@ public class ExtraItemsGenerator : MonoBehaviour {
 	}
 
 	// Poniższą metodę można odkomentować do testów
-	void OnGUI() {
+	/*void OnGUI() {
 		if (GUILayout.Button ("Coins")) {
 			generateCoins();
 		}
 		if (GUILayout.Button ("Boosts")) {
 			generateBoosts();
 		}
-	}
+	}*/
 }

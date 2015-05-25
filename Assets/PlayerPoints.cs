@@ -10,6 +10,7 @@ public class PlayerPoints : MonoBehaviour {
 		if(col.gameObject.tag == "Coin")
 		{
 			points++;
+
 			col.gameObject.SetActive(false);
 			PhotonNetwork.Destroy(col.gameObject);
 		}
