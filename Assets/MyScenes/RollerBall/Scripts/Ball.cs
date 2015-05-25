@@ -5,6 +5,11 @@ namespace UnityStandardAssets.Vehicles.Ball
 {
     public class Ball : MonoBehaviour
     {
+		public const float MINIMUM_MOVE_POWER = 1;
+		public const float MAXIMUM_MOVE_POWER = 10;
+		public const float MINIMUM_JUMP_POWER = 0;
+		public const float MAXIMUM_JUMP_POWER = 7;
+
         [SerializeField] private float m_MovePower = 5; // The force added to the ball to move it.
         [SerializeField] private bool m_UseTorque = true; // Whether or not to use torque to move the ball.
         [SerializeField] private float m_MaxAngularVelocity = 25; // The maximum velocity the ball can rotate at.
@@ -13,6 +18,29 @@ namespace UnityStandardAssets.Vehicles.Ball
         private const float k_GroundRayLength = 1f; // The length of the ray to check if the ball is grounded.
         private Rigidbody m_Rigidbody;
 
+		public void SpeedUp() {
+			if(m_MovePower < MAXIMUM_MOVE_POWER) {
+				m_MovePower++;
+			}
+		}
+		
+		public void SlowDown() {
+			if (m_MovePower > MINIMUM_MOVE_POWER) {
+				m_MovePower--;
+			}
+		}
+		
+		public void JumpHeigher() {
+			if (m_JumpPower < MAXIMUM_JUMP_POWER) {
+				m_JumpPower++;
+			}
+		}
+		
+		public void JumpLower() {
+			if (m_JumpPower > MINIMUM_JUMP_POWER) {
+				m_JumpPower--;
+			}
+		}
 
         private void Start()
         {
