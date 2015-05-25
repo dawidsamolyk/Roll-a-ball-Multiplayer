@@ -6,6 +6,11 @@ TagManager:
   tags:
   - PlayerFollowingCamera
   - Surface
+  - Coin
+  - SpeedUp
+  - SpeedDown
+  - JumpLower
+  - JumpHigher
   layers:
   - Default
   - TransparentFX
