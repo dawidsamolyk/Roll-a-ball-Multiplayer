@@ -40,7 +40,7 @@ namespace UnityStandardAssets.Vehicles.Ball
 			}
 		}
 		
-		public void JumpHeigher ()
+		public void JumpHigher ()
 		{
 			if (m_PhotonView.isMine) {
 				if (m_JumpPower < MAXIMUM_JUMP_POWER) {
