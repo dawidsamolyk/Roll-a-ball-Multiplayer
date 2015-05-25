@@ -1,10 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MyScenes\Lobby\Scripts\ClickDetector.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\FPSLimiter.cs">
     <Files>
-      <File FileName="Assets\MyScenes\Lobby\Scripts\ClickDetector.cs" Line="1" Column="1" />
-      <File FileName="Assets\MyScenes\Lobby\Scripts\Matchmaker.cs" Line="1" Column="1" />
-      <File FileName="Assets\MyScenes\Lobby\Scripts\RollerBallLogic.cs" Line="1" Column="1" />
+      <File FileName="Assets\DebugMenuController.cs" Line="14" Column="36" />
+      <File FileName="Assets\FPSLimiter.cs" Line="26" Column="35" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
