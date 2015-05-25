@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - PlayerFollowingCamera
+  - Surface
   layers:
   - Default
   - TransparentFX
