@@ -54,12 +54,12 @@ public class ExtraItemsGenerator : MonoBehaviour {
 	}
 
 	// Poniższą metodę można odkomentować do testów
-	/*void OnGUI() {
+	void OnGUI() {
 		if (GUILayout.Button ("Coins")) {
 			generateCoins();
 		}
 		if (GUILayout.Button ("Boosts")) {
 			generateBoosts();
 		}
-	}*/
+	}
 }
