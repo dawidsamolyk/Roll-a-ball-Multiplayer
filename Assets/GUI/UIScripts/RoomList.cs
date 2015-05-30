@@ -45,12 +45,7 @@ public class RoomList : MonoBehaviour
 	
 	}
 
-	/**
-	 * Destroying children of UIGrid contains all rooms items
-	 * may be highly unoptimized but should prevent overload
-	 * of items in grid.
-	 * 
-	 */
+
 	private void DestroyOutdatedRoomItemsFromList (List<GameObject> roomItems)
 	{
 		foreach(GameObject roomItem in roomItems)
@@ -188,9 +183,7 @@ public class RoomList : MonoBehaviour
 		playersCountLabel.GetComponent<UILabel> ().text = string.Format("Players {0}/{1}", currentPlayersCount, maxPlayersCount);
 	}
 
-	/**
-	 * Set parent for kids. Don't let them go orphanage.
-	 */
+
 	private void SetParent (GameObject parent, GameObject child)
 	{
 		child.transform.parent = parent.transform;
@@ -217,34 +210,28 @@ public class RoomList : MonoBehaviour
 		int iterationCount = 0;
 
 		foreach(GameObject item in roomItems) {
-			SetItemPosition(item, iterationCount);
-			iterationCount++;
+			SetItemPosition(item);
+		
 		}
 	}
 
-	private void SetItemPosition(GameObject item, int itemIndex)
+	private void SetItemPosition(GameObject item)
 	{
-		Vector3 translationVector = new Vector3(itemIndex * ITEM_DISTANCE, 0f, 0f);
 		InvalidateItemTransform (item);
-		InvalidateItemPosition (item, itemIndex);
+		InvalidateItemPosition (item);
 	}
 
 	private void InvalidateItemTransform(GameObject item)
 	{	
 		item.transform.localScale = new Vector3(1f,1f,1f);
 		item.transform.rotation = new Quaternion (0f, 0f, 0f, 0f);
-		item.transform.position = new Vector3 (0f, 0f, 0f);
 	}
 
-	private void InvalidateItemPosition(GameObject item, int itemIndex)
+	private void InvalidateItemPosition(GameObject item)
 	{
 		Vector3 itemPosition = new Vector3 (0f, 0f, 0f);
 		Vector3 parentPosition = GetParentPosition (item);
-		itemPosition.x = parentPosition.x;
-		itemPosition.y = parentPosition.y;
-		itemPosition.z = parentPosition.z;
-
-		item.transform.position = itemPosition;
+		item.transform.position = parentPosition;
 	}
 
 
@@ -256,7 +243,7 @@ public class RoomList : MonoBehaviour
 	private void repositionItems()
 	{
 		if (repositionGrid) {
-			roomListUIGrid.repositionNow = true;
+			roomListUIGrid.Reposition();
 		}
 	}
 

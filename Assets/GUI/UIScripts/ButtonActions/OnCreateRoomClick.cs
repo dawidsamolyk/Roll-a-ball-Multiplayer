@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class OnCreateRoomClick : MonoBehaviour {
+public class OnCreateRoomClick : MonoBehaviour
+{
 
 	public GameObject createRoomPanel;
 	public GameObject creatingRoomInfoPanel;
@@ -9,45 +10,45 @@ public class OnCreateRoomClick : MonoBehaviour {
 	public GameObject privateRoomToggle;
 	public GameObject roomNameField;
 	public GameObject playerNumberField;
-
+	public Matchmaker matchmaker;
 	private RoomOptions options;
 
-	void Start()
+	void Start ()
 	{
 		//TODO default options, to implement: set options like number of max
 		//players and visibility
 		//options = new RoomOptions () {isVisible = true, maxPlayers = 4};
 	}
 
-	void OnClick()
+	void OnClick ()
 	{
 		string roomName = "";
 		int playerNumber = 0;
 		bool visible = true;
+		bool createRoom = true;
 
-		try
-		{
-			roomName = getRoomName();
-			playerNumber = getPlayersNumber();
+
+		try {
+			roomName = getRoomName ();
+			playerNumber = getPlayersNumber ();
+			IsRoomExists (roomName);
+
+		} catch (System.FormatException e) {
+			createRoom = false;
+			setErrorPanel (e.Message);
+
+		} catch (System.ArgumentException e) {
+			createRoom = false;
+			setErrorPanel (e.Message);
 		}
-		catch (System.FormatException e)
-		{
-			setErrorPanel(e.Message);
+	
+		if (createRoom) {
+			if (PhotonNetwork.connectedAndReady && !PhotonNetwork.inRoom) {			
+				visible = privateRoomToggle.GetActive ();
+				options = new RoomOptions ()
+				{isVisible = visible, maxPlayers = playerNumber};
 
-		}
-		catch (System.ArgumentException e)
-		{
-			setErrorPanel(e.Message);
-		}
-
-		visible = privateRoomToggle.GetActive ();
-		options = new RoomOptions ()
-		{isVisible = visible, maxPlayers = playerNumber};
-
-		if (!roomName.Equals ("") && 
-		    ! (playerNumber < 2 || playerNumber > 8)) {
-			if (PhotonNetwork.connectedAndReady && !PhotonNetwork.inRoom) {
-				CreateRoom(roomName, options);
+				CreateRoom (roomName, options);
 			}
 		}
 	}
@@ -56,53 +57,58 @@ public class OnCreateRoomClick : MonoBehaviour {
 	/**
 	 * Sets panel with information about bad parameters 
 	 */
-	private void setErrorPanel(string exceptionMessage)
+	private void setErrorPanel (string exceptionMessage)
 	{
-		NGUITools.SetActive(createRoomPanel, false);
-		NGUITools.SetActive(invalidParametersPanel, true);
+		NGUITools.SetActive (createRoomPanel, false);
+		NGUITools.SetActive (invalidParametersPanel, true);
 		GameObject invalidParametersPanelInfoLabel = 
 			GameObject.Find ("InvalidParametersPanel/ErrorInfoLabel");
 
 		invalidParametersPanelInfoLabel.GetComponent<UILabel> ().text = exceptionMessage;		
 	}
 
-	private int getPlayersNumber()
+	private int getPlayersNumber ()
 	{
 		int playerNumber = 0;
 
-		try
-		{
-			playerNumber = int.Parse(playerNumberField.GetComponent<UILabel> ().text);
-		}
-		catch(System.FormatException e)
-		{
+		try {
+			playerNumber = int.Parse (playerNumberField.GetComponent<UILabel> ().text);
+		} catch (System.FormatException e) {
 			throw new System.FormatException ("Invalid character in players number field.");
 		}
 
-		if(playerNumber < 2 || playerNumber > 8)
-		{
-			throw new System.ArgumentException("Players number is not in range 2 - 8");
+		if (playerNumber < 2 || playerNumber > 8) {
+			throw new System.ArgumentException ("Players number is not in range 2 - 8");
 		}
 
 		return playerNumber;
 	}
 
-	private string getRoomName()
+	private string getRoomName ()
 	{
 		string roomName = roomNameField.GetComponent<UILabel> ().text;
 
-		if(roomName.Equals(""))
-		{
-			throw new System.ArgumentException("Room name can not be empty.");
+		if (roomName.Equals ("")) {
+			throw new System.ArgumentException ("Room name can not be empty.");
 		}
 
 		return roomName;
 	}
 
-	private void CreateRoom(string roomName, RoomOptions options)
+	private void CreateRoom (string roomName, RoomOptions options)
 	{
 		PhotonNetwork.JoinOrCreateRoom (roomName, options, TypedLobby.Default);
 		NGUITools.SetActive (createRoomPanel, false);
 		NGUITools.SetActive (creatingRoomInfoPanel, true);
 	}
+
+	private void IsRoomExists (string roomName)
+	{
+		if (matchmaker.containsRoom (roomName)) {
+			string message = string.Format ("There already exists room with name {0}.", roomName);
+			throw new System.ArgumentException (message);				
+		}		
+	}
 }
+
+

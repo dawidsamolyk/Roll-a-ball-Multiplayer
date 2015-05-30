@@ -36,6 +36,16 @@ public class Matchmaker : Photon.MonoBehaviour
 		}
 		// END - przykład zachowywania dodatkowych parametrów w pokoju gry
 	}
+
+	public bool containsRoom (string roomName)
+	{
+		foreach (RoomInfo info in roomsList) {
+			if (info.name.Equals (roomName)) {
+				return true;
+			}		
+		}		
+		return false;
+	}
 	
 
 }
