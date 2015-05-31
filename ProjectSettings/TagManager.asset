@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - PlayerFollowingCamera
+  - Surface
+  - Coin
+  - SpeedUp
+  - SpeedDown
+  - JumpLower
+  - JumpHigher
   layers:
   - Default
   - TransparentFX
