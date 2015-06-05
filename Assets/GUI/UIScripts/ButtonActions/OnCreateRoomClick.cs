@@ -7,7 +7,6 @@ public class OnCreateRoomClick : MonoBehaviour
 	public GameObject createRoomPanel;
 	public GameObject creatingRoomInfoPanel;
 	public GameObject invalidParametersPanel;
-	public GameObject privateRoomToggle;
 	public GameObject roomNameField;
 	public GameObject playerNumberField;
 	public Matchmaker matchmaker;
@@ -44,11 +43,7 @@ public class OnCreateRoomClick : MonoBehaviour
 	
 		if (createRoom) {
 			if (PhotonNetwork.connectedAndReady && !PhotonNetwork.inRoom) {			
-				visible = privateRoomToggle.GetActive ();
-				options = new RoomOptions ()
-				{isVisible = visible, maxPlayers = playerNumber};
-
-				CreateRoom (roomName, options);
+				CreateRoom (roomName, playerNumber);
 			}
 		}
 	}
@@ -95,11 +90,20 @@ public class OnCreateRoomClick : MonoBehaviour
 		return roomName;
 	}
 
-	private void CreateRoom (string roomName, RoomOptions options)
+	private void CreateRoom (string roomName, int playersNumber)
 	{
+		options = new RoomOptions ()
+		{isVisible = true, maxPlayers = playersNumber};
 		PhotonNetwork.JoinOrCreateRoom (roomName, options, TypedLobby.Default);
-		NGUITools.SetActive (createRoomPanel, false);
-		NGUITools.SetActive (creatingRoomInfoPanel, true);
+		switchPanels (createRoomPanel, creatingRoomInfoPanel);
+	}
+
+
+	private void switchPanels(GameObject panelToHide, GameObject panelToShow)
+	{
+		NGUITools.SetActive (panelToHide, false);
+		NGUITools.SetActive (panelToShow, true);
+
 	}
 
 	private void IsRoomExists (string roomName)

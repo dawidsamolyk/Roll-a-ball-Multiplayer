@@ -1,11 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ExtraItemsGenerator.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\GUI\UIScripts\ButtonActions\OnCreateRoomClick.cs">
     <Files>
-      <File FileName="Assets\ExtraItemsGenerator.cs" Line="1" Column="1" />
-      <File FileName="Assets\PlayerPoints.cs" Line="1" Column="1" />
-      <File FileName="Assets\MyScenes\Lobby\Scripts\Matchmaker.cs" Line="1" Column="1" />
-      <File FileName="Assets\MyScenes\Lobby\Scripts\RollerBallLogic.cs" Line="1" Column="1" />
+      <File FileName="Assets\GUI\UIScripts\ButtonActions\OnCreateRoomClick.cs" Line="48" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
