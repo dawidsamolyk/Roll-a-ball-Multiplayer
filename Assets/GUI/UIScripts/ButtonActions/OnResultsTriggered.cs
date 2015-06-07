@@ -8,16 +8,14 @@ public class OnResultsTriggered : MonoBehaviour
 	public KeyCode resultsKey;
 	public GameObject resultsPanel;
 	public GameObject playerModel;
+	public GameObject itemsParent;
+	public UIGrid grid;
+	private List<GameObject> playersItems;
 
-
-	private List<GameObject> playerItems;
-	private PhotonPlayer[] players;
-
-	void Start()
+	void Start ()
 	{
-		playerItems = new List<GameObject> ();
+		playersItems = new List<GameObject> ();
 	}
-
 
 	void Update ()
 	{
@@ -26,65 +24,100 @@ public class OnResultsTriggered : MonoBehaviour
 
 	private void resultsPanelActivity ()
 	{
-		if (PhotonNetwork.inRoom && Input.GetKey (resultsKey)) {
-			SetPlayerList();
+		if (PhotonNetwork.inRoom && Input.GetKeyDown (resultsKey)) {
+			EnablePanel (resultsPanel);
 			NGUITools.SetActive (resultsPanel, true);
 
-		} else {
-			NGUITools.SetActive (resultsPanel, false);
-			ClearPlayers();
+		} else if (Input.GetKeyUp (resultsKey)) {
+			DisablePanel (resultsPanel);
 		}	
 	}
 
-
-	private void SetPlayerList()
+	private void EnablePanel (GameObject panel)
 	{
-		players = PhotonNetwork.playerList;
-		AddPlayersToList ();
-		ActivePlayerItems ();
+		PreparePlayersList ();
+		NGUITools.SetActive (panel, true);
 	}
 
-	private void AddPlayersToList()
+	private void DisablePanel (GameObject panel)
+	{
+		NGUITools.SetActive (panel, false);
+		ClearItems (playersItems);
+	}
+
+	private void PreparePlayersList ()
+	{
+		PhotonPlayer[] players = PhotonNetwork.playerList;
+		playersItems = PhotonPlayersToList (players);
+		//SetParents (playersItems, itemsParent);
+		//ValidateItemsTransform (playersItems);
+		ActivePlayerItems (playersItems);
+		Reposition ();
+	}
+
+	private List<GameObject> PhotonPlayersToList (PhotonPlayer[] photonPlayers)
 	{
 		GameObject item;
-		foreach (PhotonPlayer player in players) {
-			item = Instantiate(playerModel);
-			SetLabelsInItem(player, item);
-			playerItems.Add(item);		
+		List<GameObject> items = new List<GameObject> ();
+
+		foreach (PhotonPlayer player in photonPlayers) {
+			item = NGUITools.AddChild (itemsParent, playerModel);
+			SetLabelsInItem (player, item);
+			items.Add (item);
 		}
+
+		return items;
 	}
 
-	private void SetLabelsInItem(PhotonPlayer player, GameObject playerItem)
+	private void SetLabelsInItem (PhotonPlayer player, GameObject playerItem)
 	{
 		UILabel nickLabel, pointsLabel, pingLabel;
-		nickLabel = getLabelFromChild (player, LabelNames.NICK_LABEL_NAME);
-		pointsLabel = getLabelFromChild (player, LabelNames.POINTS_LABEL_NAME);
-		pingLabel = getLabelFromChild (player, LabelNames.PING_LABEL_NAME);
+		GameObjectHelper helper = new GameObjectHelper ();
 
-		nickLabel.text = player.name;
-		pointsLabel.text = player.GetScore ();
+		nickLabel = helper.GetComponentFromChild<UILabel> (playerItem, LabelNames.NICK_LABEL_NAME); 
+		pointsLabel = helper.GetComponentFromChild<UILabel> (playerItem, LabelNames.POINTS_LABEL_NAME);
+		pingLabel = helper.GetComponentFromChild<UILabel> (playerItem, LabelNames.PING_LABEL_NAME);
+
+		nickLabel.text = (player.name.Equals (string.Empty)) ? System.Convert.ToString (player.ID) : player.name;
+		pointsLabel.text = System.Convert.ToString (player.GetScore ());
 		pingLabel.text = "TO BE IMPLEMENTED";
 	}
 
-	private UILabel getLabelFromChild(GameObject parent, string childName)
+	private void ActivePlayerItems (List<GameObject> items)
 	{
-		UILabel label = parent.transform.FindChild (childName).gameObject.GetComponent<UILabel> ();
-		return label;
-	}
-
-	private void ActivePlayerItems()
-	{
-		foreach (GameObject item in playerItems) {
-			NGUITools.SetActive(item, true);
+		foreach (GameObject item in items) {
+			NGUITools.SetActive (item, true);
 		}
 	}
 
-
-	private void ClearPlayers()
+	private void SetParents (List<GameObject> items, GameObject parent)
 	{
-		foreach (GameObject item in playerItems) {
-			Destroy(item);		
+		GameObjectHelper helper = new GameObjectHelper ();
+		foreach (GameObject child in items) {
+			helper.setParent (child, parent);
 		}
+	}
+	
+	private void ValidateItemsTransform (List<GameObject> items)
+	{
+		GameObjectHelper helper = new GameObjectHelper ();
+		foreach (GameObject item in items) {
+			TransformValidator.ResetItemTransform (item);
+			helper.setTransformFromParent (item);			
+		}
+	}
+
+	private void ClearItems (List<GameObject> items)
+	{
+		foreach (GameObject item in items) {
+			NGUITools.Destroy (item);
+		}
+		items.Clear ();		
+	}
+
+	private void Reposition ()
+	{
+		grid.repositionNow = true;
 	}
 
 }

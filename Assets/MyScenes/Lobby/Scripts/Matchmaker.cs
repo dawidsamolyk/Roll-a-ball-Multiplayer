@@ -46,6 +46,16 @@ public class Matchmaker : Photon.MonoBehaviour
 		}		
 		return false;
 	}
-	
+
+	public RoomInfo getRoomByName (string name)
+	{
+		foreach (RoomInfo room in roomsList) {
+			if (room.name.Equals (name)) {
+				return room;
+			}		
+		}
+
+		return null;
+	}
 
 }

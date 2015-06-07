@@ -96,14 +96,7 @@ public class RoomList : MonoBehaviour
 	private bool IsItemOutdated(GameObject item)
 	{
 		string roomName = GetRoomName (item);
-
-		foreach (RoomInfo roomInfo in matchmaker.roomsList) {
-			if(roomName.Equals(roomInfo.name))
-			{
-				return false;
-			}
-		}
-		return true;
+		return ! matchmaker.containsRoom (roomName);
 	}
 
 	private bool IsNewCreatedRoom(RoomInfo roomInfo, List<GameObject> roomItems)
@@ -114,7 +107,6 @@ public class RoomList : MonoBehaviour
 				return false;
 			}
 		}
-
 		return true;
 	}
 
@@ -135,26 +127,20 @@ public class RoomList : MonoBehaviour
 		}
 	}
 
-
 	private void RefreshPlayersCount(List<GameObject> roomItems)
 	{
-		foreach (RoomInfo roomInfo in matchmaker.roomsList) {
-			foreach(GameObject roomItem in roomItems)
+		foreach (GameObject roomItem in roomItems) {
+			string roomName = GetRoomName(roomItem);
+
+			if(matchmaker.containsRoom(roomName))
 			{
-				if(GetRoomName(roomItem).Equals(roomInfo.name))
-				{
-					int currentPlayers = roomInfo.playerCount;
-					int maxPlayers = roomInfo.maxPlayers;
-					SetPlayersCount(currentPlayers, maxPlayers, roomItem);
-
-					break;
-				}
-			}
+				RoomInfo room = matchmaker.getRoomByName(roomName);
+				int currentPlayers = room.playerCount;
+				int maxPlayers = room.maxPlayers;
+				SetPlayersCount(currentPlayers, maxPlayers, roomItem);
+			}		
 		}
-	}
-
-
-	
+	}	
 
 	/**
 	 * Set UILabel elements in given GameObject with info from roomInfo object.
@@ -208,32 +194,13 @@ public class RoomList : MonoBehaviour
 	private void ValidItemsPosition (List<GameObject> roomItems)
 	{
 		int iterationCount = 0;
+		GameObjectHelper helper = new GameObjectHelper ();
 
 		foreach(GameObject item in roomItems) {
-			SetItemPosition(item);
-		
+			TransformValidator.ResetItemTransform(item);
+			helper.setTransformFromParent(item);
 		}
 	}
-
-	private void SetItemPosition(GameObject item)
-	{
-		InvalidateItemTransform (item);
-		InvalidateItemPosition (item);
-	}
-
-	private void InvalidateItemTransform(GameObject item)
-	{	
-		item.transform.localScale = new Vector3(1f,1f,1f);
-		item.transform.rotation = new Quaternion (0f, 0f, 0f, 0f);
-	}
-
-	private void InvalidateItemPosition(GameObject item)
-	{
-		Vector3 itemPosition = new Vector3 (0f, 0f, 0f);
-		Vector3 parentPosition = GetParentPosition (item);
-		item.transform.position = parentPosition;
-	}
-
 
 	private Vector3 GetParentPosition(GameObject child)
 	{
