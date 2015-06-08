@@ -33,4 +33,9 @@ MonoBehaviour:
   - PunRespawn
   - RequestForPickupTimes
   - TaggedPlayer
+  - getOwner
+  - setOwner
+  - updateClientMotion
+  - updateClientCamera
+  - updateClientMove
   DisableAutoOpenWizard: 0
