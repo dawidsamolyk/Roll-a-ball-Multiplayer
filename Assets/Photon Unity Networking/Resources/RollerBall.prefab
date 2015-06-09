@@ -97,7 +97,7 @@ MonoBehaviour:
   m_MovePower: 5
   m_UseTorque: 1
   m_MaxAngularVelocity: 25
-  m_JumpPower: 4
+  m_JumpPower: 1
 --- !u!114 &11401044
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -19,6 +19,7 @@ public class PlayerManager : MonoBehaviour
 	public void Update ()
 	{
 		ball.Move (move, jump);
+		ApplyPlayerMovementConstraints ();
 	}
 
 	[RPC]
@@ -26,5 +27,13 @@ public class PlayerManager : MonoBehaviour
 	{
 		this.move = move;
 		this.jump = jump;
+	}
+
+	private void ApplyPlayerMovementConstraints()
+	{
+		Vector3 pos = transform.position;
+		pos.x = Mathf.Clamp(pos.x, -25, 25);
+		pos.z = Mathf.Clamp(pos.z , -74, 25);
+		transform.position = pos;
 	}
 }

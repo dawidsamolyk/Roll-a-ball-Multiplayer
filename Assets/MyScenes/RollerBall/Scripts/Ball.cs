@@ -9,7 +9,7 @@ namespace UnityStandardAssets.Vehicles.Ball
 		public const float MINIMUM_MOVE_POWER = 1;
 		public const float MAXIMUM_MOVE_POWER = 10;
 		public const float MINIMUM_JUMP_POWER = 0;
-		public const float MAXIMUM_JUMP_POWER = 7;
+		public const float MAXIMUM_JUMP_POWER = 5;
 		[SerializeField]
 		private float m_MovePower = 5; // The force added to the ball to move it.
 		[SerializeField]
