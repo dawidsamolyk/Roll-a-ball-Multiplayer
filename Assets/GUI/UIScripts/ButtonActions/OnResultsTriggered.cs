@@ -71,16 +71,17 @@ public class OnResultsTriggered : MonoBehaviour
 
 	private void SetLabelsInItem (PhotonPlayer player, GameObject playerItem)
 	{
-		UILabel nickLabel, pointsLabel, pingLabel;
+		UILabel nickLabel, pointsLabel;
 		GameObjectHelper helper = new GameObjectHelper ();
 
 		nickLabel = helper.GetComponentFromChild<UILabel> (playerItem, LabelNames.NICK_LABEL_NAME); 
 		pointsLabel = helper.GetComponentFromChild<UILabel> (playerItem, LabelNames.POINTS_LABEL_NAME);
-		pingLabel = helper.GetComponentFromChild<UILabel> (playerItem, LabelNames.PING_LABEL_NAME);
 
-		nickLabel.text = (player.name.Equals (string.Empty)) ? System.Convert.ToString (player.ID) : player.name;
-		pointsLabel.text = System.Convert.ToString (player.GetScore ());
-		pingLabel.text = "TO BE IMPLEMENTED";
+		nickLabel.text = string.Format("Player{0}",player.ID);
+		pointsLabel.text = string.Format ("{0} pts", player.GetScore ());
+
+		MarkLocalPlayer(player, playerItem);			
+
 	}
 
 	private void ActivePlayerItems (List<GameObject> items)
@@ -89,6 +90,22 @@ public class OnResultsTriggered : MonoBehaviour
 			NGUITools.SetActive (item, true);
 		}
 	}
+
+	private void MarkLocalPlayer(PhotonPlayer player, GameObject playerItem)
+	{
+		if (player == PhotonNetwork.player) {
+			UILabel nickLabel, pointsLabel;
+			GameObjectHelper helper = new GameObjectHelper ();
+		
+			nickLabel = helper.GetComponentFromChild<UILabel> (playerItem, LabelNames.NICK_LABEL_NAME); 
+			pointsLabel = helper.GetComponentFromChild<UILabel> (playerItem, LabelNames.POINTS_LABEL_NAME);
+		
+			nickLabel.color = Color.yellow;
+			pointsLabel.color = Color.yellow;
+		}
+
+	}
+
 
 	private void SetParents (List<GameObject> items, GameObject parent)
 	{

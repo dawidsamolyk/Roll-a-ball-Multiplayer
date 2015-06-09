@@ -4,7 +4,6 @@ using UnityStandardAssets.Vehicles.Ball;
 
 public class PlayerPoints : Photon.MonoBehaviour
 {
-	private int points = 0;
 	private string guiPlayerNameAndScore;
 
 	public GUIStyle playerNameAndScoreStyle;
@@ -16,28 +15,18 @@ public class PlayerPoints : Photon.MonoBehaviour
 
 	private void UpdateGuiPlayerNameAndScore ()
 	{
-		guiPlayerNameAndScore = "Player " + PhotonNetwork.player.ID + " : " + points + " points";
+		guiPlayerNameAndScore = "Player " + PhotonNetwork.player.ID + " : " + PhotonNetwork.player.GetScore() + " points";
 	}
 
 	void OnCollisionEnter (Collision col)
 	{
-		if (col.gameObject.tag == "Coin") {
-			points++;
+		if (col.gameObject.tag == "Coin" && photonView.isMine) {
+			PhotonNetwork.player.AddScore(1);
 
 			UpdateGuiPlayerNameAndScore ();
 
 			col.gameObject.SetActive (false);
 			PhotonNetwork.Destroy (col.gameObject);
-		}
-	}
-
-	public void OnPhotonSerializeView (PhotonStream stream, PhotonMessageInfo info)
-	{
-		if (stream.isWriting) {
-			stream.SendNext (points);
-
-		} else {
-			points = (int)stream.ReceiveNext ();
 		}
 	}
 
