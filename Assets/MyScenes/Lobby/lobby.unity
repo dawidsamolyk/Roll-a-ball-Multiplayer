@@ -13339,8 +13339,9 @@ GameObject:
   - 114: {fileID: 1090002689}
   - 114: {fileID: 1090002688}
   - 54: {fileID: 1090002692}
+  - 114: {fileID: 1090002693}
   m_Layer: 0
-  m_Name: Networking
+  m_Name: NetworkingAndGameRules
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13420,6 +13421,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1090002693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1090002687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5fdab0ef1f6dad4ab768c731529b7e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extraItemsGenerator: {fileID: 182695292}
 --- !u!1 &1106253197
 GameObject:
   m_ObjectHideFlags: 0
