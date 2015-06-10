@@ -44,7 +44,7 @@ namespace UnityStandardAssets.Vehicles.Ball
 		{
 			if (m_PhotonView.isMine) {
 				if (m_JumpPower < MAXIMUM_JUMP_POWER) {
-					m_JumpPower++;
+					m_JumpPower += 0.5f;
 				}
 			}
 		}
@@ -53,7 +53,7 @@ namespace UnityStandardAssets.Vehicles.Ball
 		{
 			if (m_PhotonView.isMine) {
 				if (m_JumpPower > MINIMUM_JUMP_POWER) {
-					m_JumpPower--;
+					m_JumpPower -= 0.5f;
 				}
 			}
 		}
