@@ -20,13 +20,17 @@ public class PlayerPoints : Photon.MonoBehaviour
 
 	void OnCollisionEnter (Collision col)
 	{
-		if (col.gameObject.tag == "Coin" && photonView.isMine) {
-			PhotonNetwork.player.AddScore(1);
+		GameObject gameObject = col.gameObject;
+		bool isCoin = gameObject.tag == "Coin";
 
+		if (isCoin && photonView.isMine) {
+			PhotonNetwork.player.AddScore (1);
 			UpdateGuiPlayerNameAndScore ();
+		}
 
-			col.gameObject.SetActive (false);
-			PhotonNetwork.Destroy (col.gameObject);
+		if (isCoin) {
+			gameObject.SetActive (false);
+			PhotonNetwork.Destroy (gameObject);
 		}
 	}
 

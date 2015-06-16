@@ -34,7 +34,7 @@ public class PrefabsGenerator {
 			throw new MissingReferenceException ("Nieustawiona nazwa obiektu, który ma być wygenerowany!");
 		}
 		
-		GameObject[] result = new GameObject[prefabsQuantity];
+		GameObject[] result = new GameObject[quantity];
 		
 		for (int i = 0; i < quantity; i++) {
 			Vector3 position = getRandomPositionOnPlaneWithExtraHeight();
