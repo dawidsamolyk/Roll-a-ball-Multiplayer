@@ -12,6 +12,8 @@ public class OnLeaveRoom : MonoBehaviour {
 		if (!PhotonNetwork.inRoom) {
 			NGUITools.SetActive(inGameMenuPanel, false);
 			NGUITools.SetActive(mainMenuPanel, true);
+			PhotonNetwork.player.SetScore (0);
+			
 		}	
 	}
 }

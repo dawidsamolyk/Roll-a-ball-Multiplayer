@@ -15,6 +15,8 @@ public class OnDisconnect : MonoBehaviour {
 		if (!PhotonNetwork.connected) {
 			NGUITools.SetActive (disconnectedPanel, true);
 			NGUITools.SetActive (currentPanel, false);
+			PhotonNetwork.player.SetScore (0);
+			
 		}
 
 	}
