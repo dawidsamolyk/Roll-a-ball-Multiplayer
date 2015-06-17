@@ -1709,6 +1709,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
+  m_StereoMirrorMode: 0
 --- !u!114 &119554894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9454,6 +9455,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
+  m_StereoMirrorMode: 0
 --- !u!1 &700468452
 GameObject:
   m_ObjectHideFlags: 0
@@ -18946,6 +18948,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
+  m_StereoMirrorMode: 0
 --- !u!1001 &1535011789
 Prefab:
   m_ObjectHideFlags: 0
