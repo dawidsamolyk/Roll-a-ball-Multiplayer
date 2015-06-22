@@ -3,6 +3,7 @@ using System.Collections;
 
 public class NetworkingGUI : MonoBehaviour {
 	public Matchmaker matchmaker;
+	public GameRulesExecutor gameRules;
 
 	void Create() 
 	{
@@ -11,8 +12,19 @@ public class NetworkingGUI : MonoBehaviour {
 
 	void OnGUI ()
 	{
-		DrawMainArea ();
-		DrawBottomLeftArea ();
+		//DrawMainArea ();
+		//DrawBottomLeftArea ();
+		DrawFinishGameButton ();
+	}
+
+	private void DrawFinishGameButton()
+	{
+		if (PhotonNetwork.inRoom) {
+			if(GUILayout.Button ("Finish Game"))
+			{
+				gameRules.FinishGame();
+			}
+		}
 	}
 
 	private void DrawMainArea()

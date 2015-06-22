@@ -1,11 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\GUI\UIScripts\ConnectionStates\OnDisconnect.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameRulesExecutor.cs">
     <Files>
-      <File FileName="Assets\GUI\UIScripts\ConnectionStates\OnLeaveRoom.cs" Line="15" Column="3" />
-      <File FileName="Assets\Scripts\PlayerManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\GUI\UIScripts\ButtonActions\OnLeaveRoomClick.cs" Line="8" Column="1" />
-      <File FileName="Assets\GUI\UIScripts\ConnectionStates\OnDisconnect.cs" Line="18" Column="4" />
+      <File FileName="Assets\Scripts\GameRulesExecutor.cs" Line="74" Column="4" />
+      <File FileName="Assets\GUI\UIScripts\ButtonActions\OnFinishGameButtonClick.cs" Line="19" Column="43" />
+      <File FileName="Assets\Scripts\GameOverScripts\DefaultGameOverStrategy.cs" Line="12" Column="45" />
+      <File FileName="Assets\Scripts\NetworkingGUI.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameOverScripts\IGameOver.cs" Line="5" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
