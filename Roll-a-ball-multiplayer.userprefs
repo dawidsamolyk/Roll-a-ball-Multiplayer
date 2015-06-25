@@ -2,11 +2,12 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameRulesExecutor.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameRulesExecutor.cs" Line="74" Column="4" />
-      <File FileName="Assets\GUI\UIScripts\ButtonActions\OnFinishGameButtonClick.cs" Line="19" Column="43" />
-      <File FileName="Assets\Scripts\GameOverScripts\DefaultGameOverStrategy.cs" Line="12" Column="45" />
+      <File FileName="Assets\Scripts\GameRulesExecutor.cs" Line="96" Column="2" />
+      <File FileName="Assets\GUI\UIScripts\ButtonActions\OnFinishGameButtonClick.cs" Line="14" Column="30" />
+      <File FileName="Assets\Scripts\GameOverScripts\DefaultGameOverStrategy.cs" Line="13" Column="3" />
       <File FileName="Assets\Scripts\NetworkingGUI.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameOverScripts\IGameOver.cs" Line="5" Column="18" />
+      <File FileName="Assets\OnEnableResultsPanel.cs" Line="118" Column="45" />
+      <File FileName="Assets\GUI\UIScripts\ButtonActions\OnResultsTriggered.cs" Line="6" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

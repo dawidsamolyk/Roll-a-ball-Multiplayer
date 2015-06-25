@@ -8,7 +8,6 @@ public class GameRulesExecutor : Photon.MonoBehaviour
 	private ExtraItemsGenerator generator;
 	private bool gameOver = false;
 	private bool gameStarted = false;
-	private bool synchronizedGameState = false;
 
 	void Start ()
 	{
@@ -17,19 +16,14 @@ public class GameRulesExecutor : Photon.MonoBehaviour
 
 	void Update ()
 	{
-		checkGameOver ();
-		if (isGameOver () && synchronizedGameState) {
-			gameOverStrategy.PerformGameOver ();
-			gameStarted = false;
-			gameOver = false;
-			synchronizedGameState = false;			
+		if (isGameOver ()) {
+			GameOver();
 		}
-
 	}
 
 	public void FinishGame ()
 	{
-		gameOver = true;
+		GameOver ();
 	}
 
 	public void OnPhotonPlayerConnected (PhotonPlayer player)
@@ -37,7 +31,6 @@ public class GameRulesExecutor : Photon.MonoBehaviour
 		if (GetRoomPlayerCount () > 1) {
 			generator.generateCoins ();
 			generator.generateBoosts ();
-			StartGame ();
 		}
 	}
 
@@ -70,31 +63,29 @@ public class GameRulesExecutor : Photon.MonoBehaviour
 
 	public void OnPhotonSerializeView (PhotonStream stream, PhotonMessageInfo info)
 	{
-		if (stream.isWriting) {
-			if (isGameOver ()) {
+		if (gameOver) {
+			if (stream.isWriting) {
 				stream.SendNext (gameOver);
-				synchronizedGameState = true;
 			}
-		}
-
-		if (stream.isReading) {
-			if ((bool)stream.ReceiveNext ()) {
-				FinishGame ();
-				synchronizedGameState = true;
+		} else {
+			if (stream.isReading) {
+				gameOver = (bool)stream.ReceiveNext ();
 			}
 		}
 	}
 
 	public bool isGameOver ()
 	{
-		return gameOver;
-		//return GetRoomPlayerCount () > 1 && GetCoinCount () == 0;
+		return (GetCoinCount () <= 0 
+		        && GetRoomPlayerCount() > 1);
 	}
 
 	public void OnGUI ()
 	{
 		GUILayout.BeginArea (new Rect (0, 100, 300, 300));
-		GUILayout.Label ("isGameOver:" + isGameOver ());
+		GUILayout.Label ("isGameOver: " + isGameOver ());
+		GUILayout.Label ("Coins remaining " + GetCoinCount());
+		GUILayout.Label ("Players in room " + GetRoomPlayerCount());
 		GUILayout.EndArea ();
 	}
 
@@ -103,9 +94,11 @@ public class GameRulesExecutor : Photon.MonoBehaviour
 		gameStarted = true;
 	}
 
-	private void checkGameOver ()
+	private void GameOver()
 	{
-		gameOver = (gameOver) ? gameOver : GetCoinCount () <= 0 && gameStarted;
+		gameOverStrategy.PerformGameOver ();
+		gameStarted = false;
+		gameOver = false;
 	}
 
 }

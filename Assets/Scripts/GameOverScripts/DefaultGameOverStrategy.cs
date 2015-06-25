@@ -10,6 +10,5 @@ public class DefaultGameOverStrategy : IGameOver {
 	{
 		NGUITools.SetActive (resultsPanel, true);
 		NGUITools.SetActive (confirmButton, true);
-		PhotonNetwork.LeaveRoom ();
 	}
 }
