@@ -17,12 +17,13 @@ public class GameRulesExecutor : Photon.MonoBehaviour
 	void Update ()
 	{
 		if (isGameOver ()) {
-			GameOver();
+			FinishGame ();
 		}
 	}
 
 	public void FinishGame ()
 	{
+		hideRoom ();
 		GameOver ();
 	}
 
@@ -76,29 +77,40 @@ public class GameRulesExecutor : Photon.MonoBehaviour
 
 	public bool isGameOver ()
 	{
-		return (GetCoinCount () <= 0 
-		        && GetRoomPlayerCount() > 1);
+		StartGame ();
+		return gameStarted && 
+			GetCoinCount () <= 0;
 	}
 
 	public void OnGUI ()
 	{
 		GUILayout.BeginArea (new Rect (0, 100, 300, 300));
 		GUILayout.Label ("isGameOver: " + isGameOver ());
-		GUILayout.Label ("Coins remaining " + GetCoinCount());
-		GUILayout.Label ("Players in room " + GetRoomPlayerCount());
+		GUILayout.Label ("Coins remaining " + GetCoinCount ());
+		GUILayout.Label ("Players in room " + GetRoomPlayerCount ());
+		GUILayout.Label ("Game started " + gameStarted);
 		GUILayout.EndArea ();
 	}
 
 	private void StartGame ()
 	{
-		gameStarted = true;
+		if (GetRoomPlayerCount () > 1 && GetCoinCount () > 0) {
+			gameStarted = true;
+		}
 	}
 
-	private void GameOver()
+	private void GameOver ()
 	{
 		gameOverStrategy.PerformGameOver ();
 		gameStarted = false;
 		gameOver = false;
 	}
+
+	private void hideRoom ()
+	{
+		PhotonNetwork.room.open = false;
+		PhotonNetwork.room.visible = false;
+	}
+
 
 }

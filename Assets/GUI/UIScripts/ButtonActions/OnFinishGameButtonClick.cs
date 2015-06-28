@@ -5,24 +5,18 @@ public class OnFinishGameButtonClick : MonoBehaviour
 {
 
 	public GameObject panelToShow;
-	public GameObject panelToHide;
+	public GameObject resultsPanel;
 	public GameObject playerCamera;
 	public GameObject menuCamera;
-
-	void OnClick ()
-	{
-		PhotonNetwork.LeaveRoom ();
-	}
 
 	void Update()
 	{
 		if (!PhotonNetwork.inRoom) {
-			playerCamera.SetActive (false);
-			gameObject.SetActive (false);
-			panelToHide.SetActive (false);
-		
+			//playerCamera.SetActive (false);
 			menuCamera.SetActive (true);
-			panelToShow.SetActive (true);
+
+			NGUITools.SetActive(resultsPanel,false);
+			NGUITools.SetActive(panelToShow, true);
 		}
 	}
 

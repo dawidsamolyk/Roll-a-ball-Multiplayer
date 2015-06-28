@@ -8495,6 +8495,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resultsKey: 9
   resultsPanel: {fileID: 1089487452}
+--- !u!114 &636870474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 636870466}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 897a37a7fd64ac74c9b390c1274634a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inGameMenuPanel: {fileID: 0}
+  mainMenuPanel: {fileID: 1301683339}
+--- !u!114 &636870475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 636870466}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db563d9ff1877aa4a9b372ff9ad44464, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disconnectedPanel: {fileID: 119554889}
+  currentPanel: {fileID: 0}
 --- !u!1 &642537867
 GameObject:
   m_ObjectHideFlags: 0
@@ -10299,6 +10325,7 @@ GameObject:
   - 114: {fileID: 822189435}
   - 114: {fileID: 822189434}
   - 114: {fileID: 822189433}
+  - 114: {fileID: 822189441}
   m_Layer: 0
   m_Name: LeaveRoomButton
   m_TagString: Untagged
@@ -10331,7 +10358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelToShow: {fileID: 1301683339}
-  panelToHide: {fileID: 1089487452}
+  resultsPanel: {fileID: 1089487452}
   playerCamera: {fileID: 636870466}
   menuCamera: {fileID: 119554889}
 --- !u!114 &822189434
@@ -10442,6 +10469,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 150, y: 40, z: 0}
   m_Center: {x: 0, y: -1.90734863e-06, z: -1.25}
+--- !u!114 &822189441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 822189431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3234537a27d33b44f964e54e7cc6341e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &826212126
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: cf4d4eb2581871a4baf7ef3d8fb4f3eb, type: 3}
@@ -10824,7 +10862,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &873820795
 Transform:
   m_ObjectHideFlags: 0
