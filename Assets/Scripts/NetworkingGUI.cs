@@ -12,8 +12,6 @@ public class NetworkingGUI : MonoBehaviour {
 
 	void OnGUI ()
 	{
-		//DrawMainArea ();
-		//DrawBottomLeftArea ();
 		DrawFinishGameButton ();
 	}
 
