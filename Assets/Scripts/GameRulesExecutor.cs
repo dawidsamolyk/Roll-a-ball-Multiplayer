@@ -21,6 +21,9 @@ public class GameRulesExecutor : Photon.MonoBehaviour
 			if (isGameOver ()) {
 				FinishGame ();
 			}
+		} else {
+			gameStarted = false;
+			gameOver = false;		
 		}
 	}
 
@@ -103,8 +106,9 @@ public class GameRulesExecutor : Photon.MonoBehaviour
 	public bool isGameOver ()
 	{
 		StartGame ();
-		return gameStarted && 
-			GetCoinCount () <= 0;
+		return (gameStarted && 
+			GetCoinCount () <= 0) 
+			|| gameOver;
 	}
 
 	public void OnGUI ()
