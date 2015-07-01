@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GameRulesExecutor : Photon.MonoBehaviour
 {
@@ -16,8 +17,10 @@ public class GameRulesExecutor : Photon.MonoBehaviour
 
 	void Update ()
 	{
-		if (isGameOver ()) {
-			FinishGame ();
+		if (PhotonNetwork.inRoom) {
+			if (isGameOver ()) {
+				FinishGame ();
+			}
 		}
 	}
 
@@ -45,6 +48,28 @@ public class GameRulesExecutor : Photon.MonoBehaviour
 		} else {
 			return 0;
 		}
+	}
+
+	private int GetUniquePlayerCount ()
+	{
+		int count = 0;
+		bool duplicate = false;
+		PhotonPlayer[] players = PhotonNetwork.playerList;
+
+		for (int i = 0; i < players.Length; i++) {
+			for (int j = i-1; j >= 0; j--) {
+				if (players [i].ID == players [j].ID) {
+					duplicate = true;
+					break;
+				}
+			}
+
+			if (!duplicate) {
+				count++;
+			}
+		}
+
+		return count;
 	}
 
 	private int GetCoinCount ()
@@ -82,15 +107,16 @@ public class GameRulesExecutor : Photon.MonoBehaviour
 			GetCoinCount () <= 0;
 	}
 
-	/*public void OnGUI ()
+	public void OnGUI ()
 	{
 		GUILayout.BeginArea (new Rect (0, 100, 300, 300));
 		GUILayout.Label ("isGameOver: " + isGameOver ());
 		GUILayout.Label ("Coins remaining " + GetCoinCount ());
 		GUILayout.Label ("Players in room " + GetRoomPlayerCount ());
+		GUILayout.Label ("Unique players in room " + GetUniquePlayerCount ());
 		GUILayout.Label ("Game started " + gameStarted);
 		GUILayout.EndArea ();
-	}*/
+	}
 
 	private void StartGame ()
 	{

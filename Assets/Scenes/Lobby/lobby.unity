@@ -11385,17 +11385,17 @@ MonoBehaviour:
   widgetsAreStatic: 0
   cullWhileDragging: 0
   worldToLocal:
-    e00: 163.5
+    e00: 174
     e01: 0
     e02: 0
     e03: 771.000061
     e10: 0
-    e11: 163.5
+    e11: 174
     e12: 0
-    e13: -1130.39502
+    e13: -1169.97998
     e20: 0
     e21: 0
-    e22: 163.5
+    e22: 174
     e23: 40
     e30: 0
     e31: 0
@@ -13530,6 +13530,7 @@ MonoBehaviour:
   playerModel: {fileID: 394875515}
   itemsParent: {fileID: 350631829}
   grid: {fileID: 350631832}
+  childrenCount: 0
 --- !u!114 &1089487455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15368,7 +15369,7 @@ Transform:
   m_GameObject: {fileID: 1236483405}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 3.76999998, z: 0}
-  m_LocalScale: {x: .00611620815, y: .00611620815, z: .00611620815}
+  m_LocalScale: {x: .00574712642, y: .00574712642, z: .00574712642}
   m_Children:
   - {fileID: 119554890}
   m_Father: {fileID: 0}
@@ -15391,17 +15392,17 @@ MonoBehaviour:
   widgetsAreStatic: 0
   cullWhileDragging: 0
   worldToLocal:
-    e00: 163.5
+    e00: 174
     e01: 0
     e02: 0
     e03: 0
     e10: 0
-    e11: 163.5
+    e11: 174
     e12: 0
-    e13: -616.39502
+    e13: -655.97998
     e20: 0
     e21: 0
-    e22: 163.5
+    e22: 174
     e23: 0
     e30: 0
     e31: 0
