@@ -111,7 +111,7 @@ public class GameRulesExecutor : Photon.MonoBehaviour
 			|| gameOver;
 	}
 
-	public void OnGUI ()
+	/*public void OnGUI ()
 	{
 		GUILayout.BeginArea (new Rect (0, 100, 300, 300));
 		GUILayout.Label ("isGameOver: " + isGameOver ());
@@ -120,7 +120,7 @@ public class GameRulesExecutor : Photon.MonoBehaviour
 		GUILayout.Label ("Unique players in room " + GetUniquePlayerCount ());
 		GUILayout.Label ("Game started " + gameStarted);
 		GUILayout.EndArea ();
-	}
+	}*/
 
 	private void StartGame ()
 	{
