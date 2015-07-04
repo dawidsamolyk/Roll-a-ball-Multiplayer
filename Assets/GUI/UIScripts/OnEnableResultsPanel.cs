@@ -9,7 +9,6 @@ public class OnEnableResultsPanel : MonoBehaviour
 	public GameObject playerModel;
 	public GameObject itemsParent;
 	public UIGrid grid;
-	public int childrenCount = 0;
 
 
 	void Start ()
@@ -29,7 +28,6 @@ public class OnEnableResultsPanel : MonoBehaviour
 
 	void Update ()
 	{
-		childrenCount = itemsParent.transform.childCount;
 	}
 
 	private void EnablePanel (GameObject panel)
