@@ -2509,7 +2509,7 @@ MonoBehaviour:
   mAlpha: 1
   mDebugInfo: 1
   mClipping: 3
-  mClipRange: {x: -3.03570557, y: -200, z: 550, w: 240}
+  mClipRange: {x: -3.03570557, y: -200, z: 550, w: 260}
   mClipSoftness: {x: 10, y: 10}
 --- !u!1 &198697206
 GameObject:
@@ -3609,7 +3609,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 350631829}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -214, y: -100, z: 0}
+  m_LocalPosition: {x: -214, y: -86, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 394875516}
@@ -3641,7 +3641,7 @@ MonoBehaviour:
   arrangement: 0
   maxPerLine: 1
   cellWidth: 500
-  cellHeight: 50
+  cellHeight: 25
   repositionNow: 0
   sorted: 0
   hideInactive: 1
@@ -3863,7 +3863,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 394875515}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -7, z: 0}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 433946480}
@@ -3893,7 +3893,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 500, y: 40, z: 0}
+  m_Size: {x: 500, y: 25, z: 0}
   m_Center: {x: 190, y: 0, z: 0}
 --- !u!1001 &398587715
 Prefab:
@@ -4319,8 +4319,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 433946479}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 34, y: 34, z: 1}
+  m_LocalPosition: {x: -15, y: 0, z: 0}
+  m_LocalScale: {x: 25, y: 25, z: 1}
   m_Children: []
   m_Father: {fileID: 394875516}
   m_RootOrder: 0
@@ -8284,8 +8284,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1050742777}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 706, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 14, z: 1}
+  m_LocalPosition: {x: 4, y: 0, z: 0}
+  m_LocalScale: {x: 712, y: 14, z: 1}
   m_Children: []
   m_Father: {fileID: 717042236}
   m_RootOrder: 0
@@ -13794,7 +13794,7 @@ Transform:
   m_GameObject: {fileID: 1716778402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 400, y: 0, z: 0}
-  m_LocalScale: {x: 34, y: 34, z: 1}
+  m_LocalScale: {x: 25, y: 25, z: 1}
   m_Children: []
   m_Father: {fileID: 394875516}
   m_RootOrder: 1
