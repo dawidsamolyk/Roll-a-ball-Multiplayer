@@ -1,0 +1,120 @@
+Initialize engine version: 5.1.0f3 (ec70b008569d)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 460M  (ID=0xdd1)
+    Vendor:   NVIDIA
+    VRAM:     1483 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\Photon3Unity3D.dll (this message is harmless)
+Loading D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
+Platform assembly: D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.106 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
+<RI> Input initialized.
+<RI> Initialized touch support.
+Initialize engine version: 5.1.0f3 (ec70b008569d)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 460M  (ID=0xdd1)
+    Vendor:   NVIDIA
+    VRAM:     1483 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\Photon3Unity3D.dll (this message is harmless)
+Loading D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
+Platform assembly: D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.112 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
+<RI> Input initialized.
+Platform assembly: D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\System.dll (this message is harmless)
+<RI> Initialized touch support.
+Non-convex MeshCollider cannot be used as a trigger in Unity 5.
+If you want to use this mesh as a trigger you have to make the MeshCollider convex. Scene hierarchy path "Lobby/Objects/Pillars/Pillar 1", Mesh asset path "" Mesh name "PillarPrototype02x08x02"
+ 
+(Filename:  Line: 1307)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: a94 -> priority: 1 
+  Thread -> id: a00 -> priority: 1 
+Platform assembly: D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: D:\Dane\Programowanie\git\roll-a-ball-multiplayer-game\roll-a-ball-multiplayer_Data\Managed\System.dll (this message is harmless)
+Non-convex MeshCollider cannot be used as a trigger in Unity 5.
+If you want to use this mesh as a trigger you have to make the MeshCollider convex. Scene hierarchy path "Lobby/Objects/Pillars/Pillar 1", Mesh asset path "" Mesh name "PillarPrototype02x08x02"
+ 
+(Filename:  Line: 1307)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 6e8 -> priority: 1 
+  Thread -> id: 10a8 -> priority: 1 
+playerWhoIsIt: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+OnPhotonPlayerConnected: #02
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+TagPlayer: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+TaggedPlayer: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+playerWhoIsIt: 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+TaggedPlayer: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+Failed to 'network-remove' GameObject. Client is neither owner nor masterClient taking over for owner who left: View (0)1011 on Coin(Clone) 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+Failed to 'network-remove' GameObject. Client is neither owner nor masterClient taking over for owner who left: View (0)1022 on SpeedUp(Clone) 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+OnPhotonPlayerDisconnected: #02
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
